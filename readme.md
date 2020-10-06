@@ -27,7 +27,7 @@ add_filter( 'wkd_plugin_switcher_deactivate_at', function( $time ){
 add_filter( 'wkd_plugin_switcher_plugins', function( $time ){
 	return [
 		'akismet/akismet.php',
-        'gutenberg/gutenberg.php'
+		'gutenberg/gutenberg.php',
 	]; // array of plugins you want to switch on and off
 });
 ```
