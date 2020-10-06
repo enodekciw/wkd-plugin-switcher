@@ -27,7 +27,7 @@ class WKD_Plugin_Switcher {
 		$this->active_from = apply_filters( 'wkd_plugin_switcher_active_from', '' );
 		$this->active_to = apply_filters( 'wkd_plugin_switcher_active_to', '' );
 		if( $this->plugins && $this->active_from && $this->active_to ) {
-			add_action( 'init', [ $this, 'switch_plugins' ], 9999 );
+			add_action( 'init', [ $this, 'switch_plugins' ], 9 );
 		}
 	}
 
