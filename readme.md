@@ -16,15 +16,17 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 2. Add the code below to your active theme's **functions.php** file
 
 ```
-add_filter( 'wkd_plugin_switcher_activate_at', function( $time ){
+// Set the time when to activ
+add_filter( 'wkd_plugin_switcher_active_from', function( $time ){
 	return '2300'; // '0700' for 07:00, '1645' for 16:45, etc.
 });
 
-add_filter( 'wkd_plugin_switcher_deactivate_at', function( $time ){
+// Set the time when to 
+add_filter( 'wkd_plugin_switcher_active_to', function( $time ){
 	return '2330'; // '0700' for 07:00, '1645' for 16:45, etc.
 });
 
-add_filter( 'wkd_plugin_switcher_plugins', function( $time ){
+add_filter( 'wkd_plugin_switcher_plugins', function( $plugins ){
 	return [
 		'akismet/akismet.php',
 		'gutenberg/gutenberg.php',
