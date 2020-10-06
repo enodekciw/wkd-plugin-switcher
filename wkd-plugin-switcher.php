@@ -27,7 +27,7 @@ class WKD_Plugin_Switcher {
 		$this->active_from = apply_filters( 'wkd_plugin_switcher_active_from', '' );
 		$this->active_to = apply_filters( 'wkd_plugin_switcher_active_to', '' );
 		if( $this->plugins && $this->active_from && $this->active_to ) {
-			add_action( 'init', [ $this, 'switch_plugins' ], 9 );
+			add_action( 'init', [ $this, 'switch_plugins' ], 1 );
 		}
 	}
 
@@ -45,7 +45,7 @@ class WKD_Plugin_Switcher {
 
 }
 
-add_action( 'init', 'wkd_plugin_switcher_init' );
+add_action( 'init', 'wkd_plugin_switcher_init', 0 );
 function wkd_plugin_switcher_init(){
 	$plugin = new WKD_Plugin_Switcher();
 }
