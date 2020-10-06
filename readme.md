@@ -2,7 +2,6 @@
 === WKD Plugin Switcher ===
 Contributors: enodekciw
 Donate link: https://wkd.lt
-Tags: comments, spam
 Requires at least: 4.5
 Tested up to: 5.5.1
 Stable tag: 0.1.0
