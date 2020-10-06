@@ -14,11 +14,11 @@ include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 
 class WKD_Plugin_Switcher {
 
-	public $plugins 		= [];
+	public $plugins 	= [];
 	public $active_plugins 	= [];
-	public $now				= '';
+	public $now		= '';
 	public $active_from 	= '';
-	public $active_to 		= '';
+	public $active_to 	= '';
 
 	public function __construct(){
 		$this->plugins = apply_filters( 'wkd_plugin_switcher_plugins', [] );
