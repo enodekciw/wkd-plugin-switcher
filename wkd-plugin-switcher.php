@@ -27,7 +27,7 @@ class WKD_Plugin_Switcher {
 		$this->activate_at = apply_filters( 'wkd_plugin_switcher_activate_at', '' );
 		$this->deactivate_at = apply_filters( 'wkd_plugin_switcher_deactivate_at', '' );
 		if( $this->plugins && $this->activate_at && $this->deactivate_at ) {
-			add_action( 'init', [ &$this, 'switch_plugins' ], 9999 );
+			add_action( 'init', [ $this, 'switch_plugins' ], 9999 );
 		}
 	}
 
