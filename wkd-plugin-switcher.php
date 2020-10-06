@@ -17,22 +17,22 @@ class WKD_Plugin_Switcher {
 	public $plugins 		= [];
 	public $active_plugins 	= [];
 	public $now				= '';
-	public $activate_at 	= '';
-	public $deactivate_at 	= '';
+	public $active_from 	= '';
+	public $active_to 		= '';
 
 	public function __construct(){
 		$this->plugins = apply_filters( 'wkd_plugin_switcher_plugins', [] );
 		$this->active_plugins = get_option( 'active_plugins', [] );
 		$this->now = apply_filters( 'wkd_plugin_switcher_now', current_time('Hi') );
-		$this->activate_at = apply_filters( 'wkd_plugin_switcher_activate_at', '' );
-		$this->deactivate_at = apply_filters( 'wkd_plugin_switcher_deactivate_at', '' );
-		if( $this->plugins && $this->activate_at && $this->deactivate_at ) {
+		$this->active_from = apply_filters( 'wkd_plugin_switcher_active_from', '' );
+		$this->active_to = apply_filters( 'wkd_plugin_switcher_active_to', '' );
+		if( $this->plugins && $this->active_from && $this->active_to ) {
 			add_action( 'init', [ $this, 'switch_plugins' ], 9999 );
 		}
 	}
 
 	public function switch_plugins(){
-		if( $this->now >= $this->activate_at && $this->now < $this->deactivate_at ) {
+		if( $this->now >= $this->active_from && $this->now < $this->active_to ) {
 			foreach( $this->plugins as $plugin ) {
 				if( ! is_plugin_active( $plugin ) ) activate_plugins( $plugin );
 			}
